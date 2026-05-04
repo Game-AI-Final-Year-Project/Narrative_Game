@@ -13,21 +13,62 @@ print("...there are 3 paths. Ahead, left and right.")
 roomChoice = input("> ")
 
 if (roomChoice == "Ahead"):
-    print()
-    print()
-    print()
+    
+    hasLight = False
+    
+    print("Going in through the main door, you find yourself in the main hall.")
+    print("The hall in front of you and the foyer are empty.")
+    print("There are no signs of life. You notice a single candle and lighter on the console table.")
+    print("Take them?")
+    print("(1. Yes)")
+    print("(2. No)")
 
+    ### Choice for player (ahead path)
+    choice = input("> ")
+    if (choice == "1"):
+        hasLight = True
+        print("You grabbed the candle and lighter!")
+
+    elif(choice == "2"):
+        hasLight = False
+        print("You left them behind as you travelled on.")
+
+    else:
+        print("Invalid choice. Please pick Yes or No")
+    
+
+    if hasLight:
+        print("You light your way through the darkness.")
+        print("As you go through, you hear ")
+    else:
+        print("You stumble around, searching for a wall to follow.")
+
+    print("")
     
 
 elif(roomChoice == "Left"):
-    print()
-    print()
-    print()
+    print("On the left side of the courtyard is a side door leading to an observatory.")
+    print("Though there are windows, they're pitch black.")
+    print("Enter?")
+    print("(1. Yes)")
+    print("(2. No)")
+
+    ### First choice for player on Left route
+    choice = input("> ")
+    if (choice == "1"):
+        print("")
+    
+    elif(choice == "2"):
+        print("")
+    
+    else:
+        print("Invalid choice. Please pick Yes or No")
+
 
 elif(roomChoice == "Right"):
-    print()
-    print()
-    print()
+    print("")
+    print("")
+    print("")
 
 else:
     print("Invalid choice. Please enter Ahead, Left or Right")
