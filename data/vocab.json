@@ -1,0 +1,17 @@
+{
+  "LOCATION:": 0,
+  "Frozen": 1,
+  "Palace": 2,
+  "Entrance": 3,
+  "STATE:": 4,
+  "torch=false": 5,
+  "ACTION:": 6,
+  "enter": 7,
+  "cave": 8,
+  "RESULT:": 9,
+  "You": 10,
+  "step": 11,
+  "into": 12,
+  "a": 13,
+  "dark": 14
+}
