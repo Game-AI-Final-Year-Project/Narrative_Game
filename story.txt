@@ -2,13 +2,16 @@ LOCATION: Frozen Palace Entrance
 STATE: torch=false
 ACTION: enter cave
 RESULT: You step into a dark icy hall.
+<END>
 
 LOCATION: Ice Corridor
 STATE: torch=true
 ACTION: explore
 RESULT: Ancient runes glow on the walls.
+<END>
 
 LOCATION: Wine Cellar
 STATE: torch=true
 ACTION: explore
 RESULT: Ancient runes glow on the walls.
+<END>

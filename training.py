@@ -4,11 +4,11 @@ import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 from torch.utils.data import Dataset, DataLoader
-import pandas as pd
-import numpy as np
 from dataset import StoryDataset
 from tokenizer import Tokenizer
 from model import TransformerModel
+import time
+
 
 ### Loading the text
 
@@ -18,15 +18,15 @@ with open("story.txt") as f:
 vocab = Tokenizer.create_vocab(text)
 tokenizer = Tokenizer(vocab)
 
-with open("data/vocab.json", "w") as f:
+with open("vocab/vocab.json", "w") as f:
     json.dump(vocab, f)
 
-with open("data/vocab.json") as f:
+with open("vocab/vocab.json") as f:
     vocab = json.load(f)
 
 ### Creating dataset
 
-dataset = StoryDataset(text=text, tokenizer=tokenizer, seq_len=64)
+dataset = StoryDataset(text=text, tokenizer=tokenizer, seq_len=128)
 
 ### Creating dataloader
 
@@ -36,8 +36,11 @@ dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
-### The Model
+### Initializing Model
+
 model = TransformerModel(vocab_size=len(tokenizer.vocab_encode)).to(device)
+model.load_state_dict(torch.load("model.pt", map_location=device))
+model.eval()
 
 ### Optimizer
 optimizer = optim.Adam(model.parameters(), lr=1e-3)
@@ -60,6 +63,8 @@ for epoch in range(10):
         optimizer.step()
 
     print(f"Epoch {epoch}: {loss.item()}")
+
+model.train()
 
 ### Saving the model
 

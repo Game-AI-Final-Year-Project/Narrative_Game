@@ -13,13 +13,13 @@ class Tokenizer:
         " Create a vocabulary from a dataset. "
 
         words = dataset.split()
-        vocab = {
-            token: index
-            for index, token in enumerate(sorted(list(set(words))))
-        }
+        vocab = {token: index for index, token in enumerate(sorted(list(set(words))))}
 
         # Adding unknown token
         vocab["<unk>"] = len(vocab)
+        vocab["<END>"] = len(vocab)
+        vocab["<BOS>"] = len(vocab)
+        vocab["<EOS>"] = len(vocab)
 
         return vocab
 
@@ -52,5 +52,5 @@ class Tokenizer:
         Returns:
             str: The decoded text.
         """
-        return "".join([self.vocab_decode.get(t, "<unk>") for t in tokens])
+        return " ".join([self.vocab_decode.get(t, "<unk>") for t in tokens])
     

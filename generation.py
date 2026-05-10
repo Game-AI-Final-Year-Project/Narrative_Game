@@ -11,9 +11,10 @@ def generate(model, tokenizer, prompt, max_len=200, temperature=1.0):
     model.eval()
     tokens = tokenizer.encode(prompt)
 
+    end_token = tokenizer.vocab_encode["<END>"]
+
     for _ in range(max_len):
         x = torch.tensor([tokens], dtype=torch.long).to(device)
-        logits = model(x)
 
         with torch.no_grad():
 
@@ -22,29 +23,26 @@ def generate(model, tokenizer, prompt, max_len=200, temperature=1.0):
         next_token_logits = logits[0, -1]
 
         # Temperature scaling (temperature controls the predictability)
-        next_token_logits = (next_token_logits / temperature)
+        next_token_logits /= temperature
 
         probs = F.softmax(next_token_logits,dim=0)
         next_token = torch.multinomial(probs, 1).item()
 
+        # Token continues until the end_token comes up
         tokens.append(next_token)
+        if next_token == end_token:
+            break
 
     return tokenizer.decode(tokens)
 
-### Loading Model and Tokenizer arguments once
-
 ### Loading the text
 
-with open("data/vocab.json") as f:
-    text = f.read()
-
-with open("data/vocab.json") as f:
+with open("vocab/vocab.json") as f:
     vocab = json.load(f)
 
-vocab = Tokenizer.create_vocab(text)
 tokenizer = Tokenizer(vocab)
 
-### The Device
+### The Device will set the device to cuda. This helps the scaling.
 
 device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 

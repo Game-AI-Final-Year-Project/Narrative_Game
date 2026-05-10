@@ -8,10 +8,17 @@ import numpy as np
 from model import TransformerModel
 from tokenizer import Tokenizer
 
+import kagglehub
+
+# Download latest version
+path = kagglehub.dataset_download("amarnathr/story-generation-dataset-10k")
+
+print("Path to dataset files:", path)
+
 ### Creating a dataset using class
 
 class StoryDataset(Dataset):
-    def __init__(self, text, tokenizer, seq_len=64):
+    def __init__(self, text, tokenizer, seq_len=128):
         self.tokenizer = tokenizer
         self.seq_len = seq_len
         
