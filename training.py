@@ -40,9 +40,14 @@ dataloader = DataLoader(dataset, batch_size=32, shuffle=True)
 
 model = TransformerModel(vocab_size=len(tokenizer.vocab_encode)).to(device)
 if os.path.exists("model.pt"):
-    model.load_state_dict(
-        torch.load("model.pt", map_location=device)
-    )
+    try:
+        model.load_state_dict(
+            torch.load("model.pt", map_location=device)
+        )
+        print("Loading existing model")
+
+    except RuntimeError:
+        print("Checkpoint incompatible. Training from scratch.")
 
 model.train()
 
