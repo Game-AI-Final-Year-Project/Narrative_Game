@@ -5,19 +5,30 @@ def startscreen():
         print("Frozen Palace: Non-AI Version")
         print("START?")
         print("(Press (1) for Start!)")
-        print("(Press (2) for Quit!)")
+        print("(Press (2) for Help!)")
+        print("(Press (3) for Quit!)")
         startChoice = input("> ")
     
         if (startChoice == "1"):
-            adventuregame()
+            adventure_game()
         elif (startChoice == "2"):
-            print("Goodbye!")
-            break
+            show_help()
+        elif (startChoice == "3"):
+            print("Goodbye! Press Ctrl+C to exit!")
         else:
             print("Invalid Choice")
+
+def show_help():
+
+    print("\n=== HELP ===")
+    print("Type the number of your choice.")
+    print("Explore the Frozen Palace.")
+    print("Survive and uncover the mystery of the missing persons.\n")
+
+    input("Press Enter to return...")
         
 
-def adventuregame():
+def adventure_game():
 
     ### Printing a welcome message
     print("You have arrived in the Frozen Palace.")
@@ -94,4 +105,5 @@ def adventuregame():
     else:
         print("Invalid choice. Please enter Ahead, Left or Right")
 
-adventuregame()
+startscreen()
+adventure_game()
