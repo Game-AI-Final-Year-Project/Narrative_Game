@@ -13,5 +13,197 @@ RESULT: Ancient runes glow on the walls.
 LOCATION: Wine Cellar
 STATE: torch=true
 ACTION: explore
+RESULT: Wine bottles across the floor.
+<END>
+
+LOCATION: Wine Cellar
+STATE: torch=true
+ACTION: explore
 RESULT: Ancient runes glow on the walls.
+<END>
+
+LOCATION: Frozen Palace Entrance
+STATE: torch=false alive=true key=false
+ACTION: enter hall
+RESULT: A freezing wind rushes through the entrance hall as the palace doors slam shut behind you.
+<END>
+
+LOCATION: Frozen Palace Hall
+STATE: torch=true alive=true key=false
+ACTION: inspect chandelier
+RESULT: Thick ice coats the chandelier, and a small brass key glints between the frozen crystals.
+<END>
+
+LOCATION: Frozen Palace Hall
+STATE: torch=false alive=true key=false
+ACTION: move forward
+RESULT: You stumble through the darkness and hear distant whispering echo through the hall.
+<END>
+
+LOCATION: Ice Corridor
+STATE: torch=true alive=true key=false
+ACTION: explore corridor
+RESULT: Ancient blue runes flicker along the icy walls, illuminating claw marks in the frost.
+<END>
+
+LOCATION: Ice Corridor
+STATE: torch=false alive=true key=false
+ACTION: walk carefully
+RESULT: Your foot catches on uneven stone and you nearly fall into a frozen crevasse.
+<END>
+
+LOCATION: Observatory
+STATE: torch=true alive=true key=false
+ACTION: inspect telescope
+RESULT: The telescope points toward a crimson star glowing above the palace towers.
+<END>
+
+LOCATION: Observatory
+STATE: torch=false alive=true key=false
+ACTION: search room
+RESULT: You hear glass cracking nearby, but the darkness hides the source.
+<END>
+
+LOCATION: Wine Cellar
+STATE: torch=true alive=true key=false
+ACTION: search barrels
+RESULT: Most barrels are frozen solid, though one contains fresh footprints in the frost.
+<END>
+
+LOCATION: Wine Cellar
+STATE: torch=true alive=true key=true
+ACTION: unlock storage door
+RESULT: The iron storage door creaks open, revealing a hidden staircase descending underground.
+<END>
+
+LOCATION: Throne Room
+STATE: torch=true alive=true key=true
+ACTION: approach throne
+RESULT: Frost spreads across the floor as a towering ice knight slowly rises from the throne.
+<END>
+
+LOCATION: Throne Room
+STATE: torch=false alive=true key=true
+ACTION: retreat
+RESULT: The sound of armored footsteps follows you through the darkness.
+<END>
+
+LOCATION: Frozen Library
+STATE: torch=true alive=true key=false
+ACTION: inspect bookshelf
+RESULT: Several frozen books collapse into dust, revealing a hidden silver dagger.
+<END>
+
+LOCATION: Frozen Library
+STATE: torch=true alive=true dagger=true
+ACTION: take dagger
+RESULT: The dagger feels unnaturally cold as faint whispers fill the room.
+<END>
+
+LOCATION: Underground Passage
+STATE: torch=true alive=true key=true
+ACTION: descend staircase
+RESULT: Cold water drips from the ceiling as the narrow passage stretches deep beneath the palace.
+<END>
+
+LOCATION: Underground Passage
+STATE: torch=false alive=true key=true
+ACTION: continue forward
+RESULT: Something skitters rapidly across the stone floor beside you.
+<END>
+
+LOCATION: Frozen Chapel
+STATE: torch=true alive=true key=true
+ACTION: inspect altar
+RESULT: A cracked crystal rests atop the altar, pulsing with pale blue light.
+<END>
+
+LOCATION: Frozen Chapel
+STATE: torch=true alive=true crystal=true
+ACTION: touch crystal
+RESULT: Visions of trapped civilians flash before your eyes as icy pain surges through your hand.
+<END>
+
+LOCATION: Prison Cells
+STATE: torch=true alive=true key=true
+ACTION: open cell
+RESULT: A terrified survivor crawls from the frozen prison cell and begs for protection.
+<END>
+
+LOCATION: Prison Cells
+STATE: torch=false alive=true key=false
+ACTION: search corridor
+RESULT: Chains rattle somewhere ahead as freezing air brushes against your face.
+<END>
+
+LOCATION: Royal Kitchen
+STATE: torch=true alive=true key=false
+ACTION: inspect table
+RESULT: Rotten food lies untouched beneath a layer of thick frost, but a warm bowl of soup still steams quietly.
+<END>
+
+LOCATION: Royal Kitchen
+STATE: torch=true alive=true key=false
+ACTION: eat soup
+RESULT: Warmth briefly returns to your body as the freezing cold fades slightly.
+<END>
+
+LOCATION: Crystal Cavern
+STATE: torch=true alive=true crystal=true
+ACTION: explore cavern
+RESULT: Massive glowing crystals illuminate a frozen lake deep beneath the palace.
+<END>
+
+LOCATION: Crystal Cavern
+STATE: torch=true alive=true crystal=true
+ACTION: cross lake
+RESULT: Cracks spread beneath your feet as the frozen lake groans loudly.
+<END>
+
+LOCATION: Tower Staircase
+STATE: torch=true alive=true key=true
+ACTION: climb stairs
+RESULT: Snow swirls through broken windows as the staircase spirals toward the upper tower.
+<END>
+
+LOCATION: Tower Staircase
+STATE: torch=false alive=true key=true
+ACTION: continue climbing
+RESULT: You lose your footing briefly as unseen ice coats the narrow steps.
+<END>
+
+LOCATION: Frozen Garden
+STATE: torch=true alive=true key=false
+ACTION: inspect statues
+RESULT: The frozen statues appear disturbingly lifelike, their terrified expressions preserved in ice.
+<END>
+
+LOCATION: Frozen Garden
+STATE: torch=true alive=true key=false
+ACTION: follow footprints
+RESULT: Fresh tracks in the snow lead toward a sealed greenhouse at the edge of the garden.
+<END>
+
+LOCATION: Greenhouse
+STATE: torch=true alive=true key=false
+ACTION: enter greenhouse
+RESULT: Thick vines coated in frost twitch slightly as you step inside.
+<END>
+
+LOCATION: Greenhouse
+STATE: torch=true alive=true key=false
+ACTION: inspect plants
+RESULT: One glowing flower blooms despite the freezing cold, filling the air with a sweet scent.
+<END>
+
+LOCATION: Frozen Throne
+STATE: torch=true alive=true crystal=true dagger=true
+ACTION: confront king
+RESULT: The Frozen King slowly opens his glowing blue eyes and raises a sword of solid ice.
+<END>
+
+LOCATION: Frozen Throne
+STATE: torch=false alive=false key=false
+ACTION: challenge king
+RESULT: The Frozen King strikes with terrifying speed, freezing you solid where you stand.
 <END>

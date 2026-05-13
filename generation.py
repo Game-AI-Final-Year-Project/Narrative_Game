@@ -28,6 +28,9 @@ def generate(model, tokenizer, prompt, max_len=200, temperature=1.0):
         probs = F.softmax(next_token_logits,dim=0)
         next_token = torch.multinomial(probs, 1).item()
 
+        if len(tokens) >= 512:
+            break
+
         # Token continues until the end_token comes up
         tokens.append(next_token)
         if next_token == end_token:

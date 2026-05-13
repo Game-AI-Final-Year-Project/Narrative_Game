@@ -12,6 +12,7 @@ class TransformerModel(nn.Module):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, d_model)
         self.pos_embedding = nn.Parameter(torch.randn(1, 512, d_model))
+        
 
         encoder_layer = nn.TransformerEncoderLayer(d_model, nhead, batch_first=True)
         self.transformer = nn.TransformerEncoder(encoder_layer, num_layers)
@@ -25,9 +26,7 @@ class TransformerModel(nn.Module):
         mask = torch.triu(torch.ones(seq_len, seq_len, device=x.device),diagonal=1)
 
         x = self.embedding(x) + self.pos_embedding[:, :x.size(1), :]
-        x = x.transpose(0,1)
         x = self.transformer(x, mask = mask)
-        x = x.transpose(0,1)
 
         return self.fc(x)
 

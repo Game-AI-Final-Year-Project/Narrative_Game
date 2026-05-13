@@ -52,8 +52,7 @@ def adventure_game():
             LOCATION: The hall of the Frozen Palace. 
             STATE: torch=true
             ACTION: Walk forward with candle and lighter, searching for missing civilians.
-        
-            Describe what happens next:
+            RESULT:
             """
             result = generate(model, tokenizer, prompt)
             print(result)
@@ -62,8 +61,7 @@ def adventure_game():
             LOCATION: The hall of the Frozen Palace. 
             STATE: torch=false
             ACTION: Walk forward fumbling in the darkness, searching for missing civilians.
-        
-            Describe what happens next:
+            RESULT:
             """
             result = generate(model, tokenizer, prompt)
             print(result)
