@@ -1,7 +1,26 @@
+def startscreen():
+    ### Title screen
+
+    while True: 
+        print("Frozen Palace: Non-AI Version")
+        print("START?")
+        print("(Press (1) for Start!)")
+        print("(Press (2) for Quit!)")
+        startChoice = input("> ")
+    
+        if (startChoice == "1"):
+            adventuregame()
+        elif (startChoice == "2"):
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid Choice")
+        
+
 def adventuregame():
 
     ### Printing a welcome message
-    print("You have arrived in the Frozen Temple.")
+    print("You have arrived in the Frozen Palace.")
     print("After hearing of many civilians never returning after visiting, you've decided to investigate.")
     print("As the mayor of the nearby town, you have a duty to.")
     print("With 2 adventurers in tow, you set off!")

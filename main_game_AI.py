@@ -5,6 +5,23 @@ from generation import generate, tokenizer, model
 from tokenizer import Tokenizer
 from model import TransformerModel
 
+def startscreen():
+    ### Title screen
+
+    while True: 
+        print("Frozen Palace: Non-AI Version")
+        print("START?")
+        print("(Press (1) for Start!)")
+        print("(Press (2) for Quit!)")
+        startChoice = input("> ")
+    
+        if (startChoice == "1"):
+            adventure_game()
+        elif (startChoice == "2"):
+            print("Goodbye!")
+            break
+        else:
+            print("Invalid Choice")
 
 def adventure_game():
 
