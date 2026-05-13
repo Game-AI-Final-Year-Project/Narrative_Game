@@ -113,6 +113,7 @@ def adventure_game():
     elif(roomChoice == "Left"):
         slow_print("On the left side of the courtyard is a side door leading to an observatory.")
         slow_print("Though there are windows, they're pitch black.")
+        slow_print("Due to this, you call one adventurer over to investigate with you.")
         slow_print("Enter?")
         slow_print("(1. Yes)")
         slow_print("(2. No)")
@@ -130,8 +131,8 @@ def adventure_game():
 
 
     elif(roomChoice == "Right"):
-        slow_print("")
-        slow_print("")
+        slow_print("The right side of the courtyard leads to a kitchen.")
+        slow_print("You tell both adventures to search the front and left side of the palace.")
         slow_print("")
 
     else:
