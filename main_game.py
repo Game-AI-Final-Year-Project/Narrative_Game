@@ -101,7 +101,7 @@ def adventure_game():
         ### First choice for player on Left route
         choice = input("> ")
         if (choice == "1"):
-            slow_print("")
+            slow_print("You and the adventurer Kit enter the observatory.")
     
         elif(choice == "2"):
             slow_print("")
@@ -113,7 +113,7 @@ def adventure_game():
     elif(roomChoice == "Right"):
         slow_print("The right side of the courtyard leads to a kitchen.")
         slow_print("You tell both adventures to search the front and left side of the palace.")
-        slow_print("")
+        slow_print("Then, you enter.")
 
     else:
         slow_print("Invalid choice. Please enter Ahead, Left or Right")

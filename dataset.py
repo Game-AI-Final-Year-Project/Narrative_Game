@@ -7,6 +7,7 @@ import pandas as pd
 import numpy as np
 from model import TransformerModel
 from tokenizer import Tokenizer
+from bs4 import BeautifulSoup
 
 import kagglehub
 
@@ -14,6 +15,11 @@ import kagglehub
 path = kagglehub.dataset_download("amarnathr/story-generation-dataset-10k")
 
 print("Path to dataset files:", path)
+
+with open("index.html") as fp:
+    soup = BeautifulSoup(fp)
+
+soup = BeautifulSoup("<html>https://www.gutenberg.org/cache/epub/78717/pg78717-images.html</html>")
 
 ### Creating a dataset using class
 
