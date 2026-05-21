@@ -59,7 +59,8 @@ def adventure_game():
     if (roomChoice == "Ahead" or "ahead"):
     
         hasLight = False
-    
+
+        slow_print("You instruct the adventurers to go through the other entrances, then set off.")
         slow_print("Going in through the main door, you find yourself in the main hall.")
         slow_print("The hall in front of you and the foyer are empty.")
         slow_print("There are no signs of life. You notice a single candle and lighter on the console table.")

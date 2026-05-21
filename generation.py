@@ -5,6 +5,10 @@ import torch.nn.functional as F
 from tokenizer import Tokenizer
 from model import TransformerModel
 
+def load_model(model):
+
+    model.load_state_dict(torch.load("model.pt", map_location=device))
+
 def generate(model, tokenizer, prompt, max_len=200, temperature=1.0):
     
     device = next(model.parameters()).device
@@ -51,3 +55,5 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 ### The Model
 model = TransformerModel(vocab_size=len(tokenizer.vocab_encode)).to(device)
+
+load_model(model)

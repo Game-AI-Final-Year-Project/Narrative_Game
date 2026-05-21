@@ -16,9 +16,22 @@ device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
 
 ### Loading the text
 
-with open("story.txt") as f:
-    text = f.read()
+files = [
+    "story.txt",
+    "55.txt",
+    "1184.txt",
+    "2701.txt",
+    "3011.txt",
+    "78717.txt"
+]
 
+text = ""
+
+for file in files:
+    with open(f"dataset/{file}", encoding="utf-8", errors="ignore") as f:
+        text += f.read() + "\n"
+
+# the vocab json and tokenizer
 vocab = Tokenizer.create_vocab(text)
 tokenizer = Tokenizer(vocab)
 

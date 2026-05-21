@@ -7,7 +7,9 @@ import pandas as pd
 import numpy as np
 from model import TransformerModel
 from tokenizer import Tokenizer
+
 from bs4 import BeautifulSoup
+import requests
 
 import kagglehub
 
@@ -19,7 +21,32 @@ print("Path to dataset files:", path)
 with open("index.html") as fp:
     soup = BeautifulSoup(fp)
 
-soup = BeautifulSoup("<html>https://www.gutenberg.org/cache/epub/78717/pg78717-images.html</html>")
+book_ids = [78717, 2701, 3011, 1184, 55]
+
+for book_id in book_ids:
+    
+    page_url = f"https://www.gutenberg.org/ebooks/{book_id}"
+    
+    response = requests.get(page_url)
+    soup = BeautifulSoup(response.text, "html.parser")
+
+    txt_link = None
+
+    for link in soup.find_all("a"):
+        href = link.get("href", "")
+
+        if "txt.utf-8" in href:
+            txt_link = "https://www.gutenberg.org" + href
+            break
+
+    if txt_link:
+        
+        text = requests.get(txt_link).text
+
+        with open(f"dataset/{book_id}.txt", "w", encoding="utf-8") as f:
+            f.write(text)
+
+        print(f"Downloaded {book_id}")
 
 ### Creating a dataset using class
 
